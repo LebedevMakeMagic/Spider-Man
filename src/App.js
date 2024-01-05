@@ -1,13 +1,31 @@
 import './App.css'
-import { Canvas } from '@react-three/fiber'
-import SMWrapper from './components/SMWrapper'
+import SMWrapper from './components/Octopus/OctopusWrapper'
+import { useEffect, useState } from 'react'
+import SymbioteWrapper from './components/Symbiote/SymbioteWrapper'
+const Loader = ({ appState, setAppState }) => {
+  return (
+    <div className="preloader">
+      <div className="PreloadContainer">
+        <button className="ButtonSP2" onClick={() => setAppState(2)}>
+          Spider man 2
+        </button>
+        <button className="ButtonSP3" onClick={() => setAppState(1)}>
+          Spider man 3
+        </button>
+      </div>
+    </div>
+  )
+}
 
 function App() {
+  const [appState, setAppState] = useState(false)
+
+
   return (
     <div className="SpiderMan">
-      <Canvas id="canvasSpiderMan" shadows>
-        <SMWrapper />
-      </Canvas>
+      {appState === 1 && <SymbioteWrapper appState={appState} />}
+      {appState === 2 && <SMWrapper appState={appState} />}
+      {!appState && <Loader appState={appState} setAppState={setAppState} />}
     </div>
   )
 }

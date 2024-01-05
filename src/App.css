@@ -1,3 +1,10 @@
+@font-face {
+  font-family: 'SpiderManFont';
+  src: url('../public/spidermanfont.ttf') format('truetype');
+  font-style: normal;
+  font-weight: normal;
+}
+
 .SpiderMan {
   position: relative;
   -moz-user-select: none;
@@ -5,15 +12,85 @@
   -webkit-user-select: none;
   -ms-user-select: none;
   user-select: none;
+  overflow: hidden;
+  font-family: SpiderManFont;
+  font-size: 60px;
+  width: 100dvw;
+  height: 100dvh;
 }
 
 #canvasSpiderMan canvas {
   background-color: black;
   width: 100dvh;
   min-height: 100dvh;
+  overflow: hidden;
   @supports (-webkit-touch-callout: none) {
     & {
       min-height: -webkit-fill-available;
     }
   }
+}
+
+.preloader {
+  height: 100dvh;
+  width: 100dvw;
+  z-index: 100000;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: url('../public//bg.jpg') center / cover no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.preloader button {
+  font-size: 60px;
+}
+
+.preloader span {
+  color: white;
+}
+
+.PreloadContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+}
+
+.PreloadContainer button {
+  border: none;
+  outline: none;
+  background: none;
+}
+
+.ButtonSP2 {
+  position: absolute;
+  top: 17%;
+  right: 2%;
+  color: #d40835;
+  text-shadow: 0px 0px 20px black;
+}
+
+.ButtonSP3 {
+  position: absolute;
+  top: 60%;
+  left: 1%;
+  color: #445e76;
+  text-shadow: 0px 0px 20px black;
+}
+
+.SymbioteLoading {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100dvw;
+  height: 100dvh;
+  background-color: black;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
 }
