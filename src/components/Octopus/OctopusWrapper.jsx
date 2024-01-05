@@ -1,12 +1,8 @@
-import React, { useEffect, useRef, useState } from 'react'
+import React, { useEffect } from 'react'
 import { SpiderMan } from './SpiderMan'
 import {
   BakeShadows,
-  Cloud,
-  Clouds,
-  CubeCamera,
   Environment,
-  OrbitControls,
   Preload,
   Sky,
   SoftShadows,
@@ -17,7 +13,6 @@ import {
   BrightnessContrast,
   ChromaticAberration,
   EffectComposer,
-  GodRays,
   Noise,
   Vignette
 } from '@react-three/postprocessing'
@@ -25,16 +20,15 @@ import { getProject } from '@theatre/core'
 import studio from '@theatre/studio'
 import extension from '@theatre/r3f/dist/extension'
 import { editable as e, PerspectiveCamera, SheetProvider } from '@theatre/r3f'
-import { Canvas, useFrame } from '@react-three/fiber'
-import { easing } from 'maath'
+import { Canvas } from '@react-three/fiber'
 import Theatre from '../../theatre/SpiderMan.json'
 import useSound from 'use-sound'
 import MainTheme from '../../mainTheme.mp3'
 
 const SpiderManTheatre = getProject('SpiderMan', { state: Theatre }).sheet('Layer')
 
-studio.initialize()
-studio.extend(extension)
+// studio.initialize()
+// studio.extend(extension)
 
 const OctopusWrapper = () => {
   const { loaded } = useProgress()

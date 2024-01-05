@@ -1,39 +1,11 @@
-import React, { useEffect, useRef, useState } from 'react'
-import {
-  BakeShadows,
-  Cloud,
-  Clouds,
-  CubeCamera,
-  Environment,
-  OrbitControls,
-  Preload,
-  RoundedBox,
-  Sky,
-  SoftShadows,
-  Stars,
-  useProgress
-} from '@react-three/drei'
-import {
-  Autofocus,
-  Bloom,
-  BrightnessContrast,
-  ChromaticAberration,
-  DepthOfField,
-  EffectComposer,
-  GodRays,
-  Noise,
-  SMAA,
-  SSAO,
-  ToneMapping,
-  Vignette
-} from '@react-three/postprocessing'
+import React, { useEffect } from 'react'
+import { BakeShadows, Environment, Preload, SoftShadows, useProgress } from '@react-three/drei'
+import { Bloom, BrightnessContrast, ChromaticAberration, EffectComposer, Noise, Vignette } from '@react-three/postprocessing'
 import { getProject } from '@theatre/core'
 import { editable as e, PerspectiveCamera, SheetProvider } from '@theatre/r3f'
 import { Symbiote } from './Symbiote'
-import * as THREE from 'three'
-import { Canvas, useFrame, useLoader } from '@react-three/fiber'
+import { Canvas } from '@react-three/fiber'
 import Theatre from '../../theatre/Symbiote.json'
-import { easing } from 'maath'
 import MainTheme from '../../mainTheme.mp3'
 import useSound from 'use-sound'
 

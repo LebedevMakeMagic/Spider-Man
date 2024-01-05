@@ -10,7 +10,7 @@ export function SpiderMan(props) {
     ;[nodes].forEach((node) => (node.frustumCulled = false))
   }, [nodes])
 
-  const bottleMaterial = new THREE.MeshPhysicalMaterial({
+  const GlassMaterial = new THREE.MeshPhysicalMaterial({
     transmission: 0.98,
     color: '#9eacad',
     transparent: false,
@@ -179,7 +179,7 @@ export function SpiderMan(props) {
         {(texture) => (
           <mesh
             geometry={nodes.NuvemDeVidro_0.geometry}
-            material={bottleMaterial}
+            material={GlassMaterial}
             position={[-0.584, 0.15, 13.679]}
             rotation={[1.473, -0.215, 1.143]}
             scale={0.011}
@@ -193,7 +193,7 @@ export function SpiderMan(props) {
         <mesh
           geometry={nodes.Janelas_0.geometry}
           frustumCulled={false}
-          material={bottleMaterial}
+          material={GlassMaterial}
           position={[0.451, 0.854, 13]}
           rotation={[-Math.PI / 2, 0, 0]}
           scale={0.011}

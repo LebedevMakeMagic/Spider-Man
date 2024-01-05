@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from 'react'
-import { useGLTF, useAnimations, CubeCamera, MeshReflectorMaterial } from '@react-three/drei'
+import { useGLTF, useAnimations, CubeCamera } from '@react-three/drei'
 import * as THREE from 'three'
 
 export function Symbiote(props) {

@@ -1,6 +1,6 @@
 import './App.css'
 import SMWrapper from './components/Octopus/OctopusWrapper'
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 import SymbioteWrapper from './components/Symbiote/SymbioteWrapper'
 const Loader = ({ appState, setAppState }) => {
   return (
@@ -19,7 +19,6 @@ const Loader = ({ appState, setAppState }) => {
 
 function App() {
   const [appState, setAppState] = useState(false)
-
 
   return (
     <div className="SpiderMan">
